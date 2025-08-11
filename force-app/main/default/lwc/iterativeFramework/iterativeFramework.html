@@ -1,0 +1,49 @@
+<template>
+    <!-- My Task List via for:each -->
+    <lightning-card title="My Task List via for:each">
+        <div class="slds-p-around_medium">
+            <div>
+                <b>TOP PRIORITY FOR THE DAY:</b><br />
+                <b>{topPriority.name} - {topPriority.status}</b>
+            </div>
+            <template for:each={tasks} for:item="task">
+                <div key={task.name}>
+                    {task.name} - {task.status}
+                </div>
+            </template>
+            <div class="slds-m-top_medium">
+                <b>LEAST PRIORITY FOR THE DAY:</b><br />
+                <i>{leastPriority.name} - {leastPriority.status}</i>
+            </div>
+        </div>
+        <div class="slds-p-around_medium">
+            All the best! Get it going!
+        </div>
+    </lightning-card>
+
+    <!-- My Task List via Iterator -->
+    <lightning-card title="My Task List via Iterator">
+        <div class="slds-p-around_medium">
+            <template iterator:task={tasks}>
+                <template if:true={task.first}>
+                    <div key={task.value.name}>
+                        <b>TOP PRIORITY FOR THE DAY:</b><br />
+                        <b>{task.value.name} - {task.value.status}</b>
+                    </div>
+                </template>
+                <div key={task.value.name}>
+                    {task.value.name} - {task.value.status}
+                </div>
+                <template if:true={task.last}>
+                    <div key={task.value.name} class="slds-m-top_medium">
+                        <b>LEAST PRIORITY FOR THE DAY:</b><br />
+                        <i>{task.value.name} - {task.value.status}</i>
+                    </div>
+                </template>
+            </template>
+        </div>
+        <div class="slds-p-around_medium">
+            All the best! Get it going!
+        </div>
+    </lightning-card>
+</template>

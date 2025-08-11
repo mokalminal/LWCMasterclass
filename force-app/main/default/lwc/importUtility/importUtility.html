@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Import Utility">
+        <div class="slds-m-around_medium">
+            The current logged in user is: {userId}<br>
+            Does he has a permission set enabled? {hasPermissions}<br>
+            Device Factor: {deviceInfo}<br>
+            Lang Info: {language}<br>
+            Locale Info: {localeInfo}<br>
+            Currency Info: {currencyInfo}l
+        </div>
+    <br>   
+    <template lwc:if={showInProd}>
+       <p> Welcome to your production system</p>
+    </template>
+    <template lwc:else>
+        <p class="slds-m-around_medium"> Welcome to your sandbox system</p>
+    </template>
+    <br>
+    <img src={src}/>
+    <br>
+    <img src={svgSample}/>
+    </lightning-card>
+   
+</template>

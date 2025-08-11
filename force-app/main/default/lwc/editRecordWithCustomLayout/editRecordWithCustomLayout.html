@@ -1,0 +1,55 @@
+<template>
+  <lightning-card title="Record Form with Custom Layout to Edit">
+      <lightning-record-edit-form
+          record-id={recordId}
+          object-api-name={objectApiName}
+          onsuccess={handleFormSuccess}>
+
+          <lightning-messages></lightning-messages>
+
+          <!-- Row 1 -->
+          <div class="slds-grid slds-gutters">
+              <div class="slds-col slds-size_1-of-2">
+                  <lightning-input-field field-name="CaseNumber"></lightning-input-field>
+              </div>
+              <div class="slds-col slds-size_1-of-2">
+                  <lightning-input-field field-name="Origin"></lightning-input-field>
+              </div>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="slds-grid slds-gutters">
+              <div class="slds-col slds-size_1-of-2">
+                  <lightning-input-field field-name="Reason"></lightning-input-field>
+              </div>
+              <div class="slds-col slds-size_1-of-2">
+                  <lightning-input-field field-name="Status"></lightning-input-field>
+              </div>
+          </div>
+
+          <!-- Row 3 -->
+          <div class="slds-grid slds-gutters">
+              <div class="slds-col slds-size_1-of-2">
+                  <lightning-input-field field-name="Subject"></lightning-input-field>
+              </div>
+              <div class="slds-col slds-size_1-of-2">
+                  <lightning-input-field field-name="Type"></lightning-input-field>
+              </div>
+          </div>
+
+          <!-- Row 4 -->
+          <div class="slds-grid slds-gutters">
+              <div class="slds-col slds-size_1-of-2">
+                  <lightning-input-field field-name="SLAViolation__c" required></lightning-input-field>
+              </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="slds-m-top_medium">
+              <lightning-button type="submit" label="Save" variant="brand"></lightning-button>
+              <lightning-button type="reset" label="Reset" class="slds-m-left_small"></lightning-button>
+          </div>
+
+      </lightning-record-edit-form>
+  </lightning-card>
+</template>
