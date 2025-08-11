@@ -1,0 +1,48 @@
+<template>
+    <lightning-card title="Create a Record with Custom Layout without Apex">
+        <lightning-record-edit-form
+            object-api-name="Case"
+        >
+            <lightning-messages></lightning-messages>
+            <div class="slds-grid slds-wrap">
+
+                <!-- Subject -->
+                <div class="slds-col slds-size_2-of-3">
+                    <lightning-input-field field-name="Subject" required></lightning-input-field>    
+                </div>
+
+                <!-- Case Reason -->
+                <div class="slds-col slds-size_1-of-3">
+                    <lightning-input-field field-name="Reason"></lightning-input-field>    
+                </div>
+
+                <!-- Type -->
+                <div class="slds-col slds-size_1-of-3">
+                    <lightning-input-field field-name="Type"></lightning-input-field>    
+                </div>
+
+                <!-- Case Origin -->
+                <div class="slds-col slds-size_1-of-3">
+                    <lightning-input-field field-name="Origin"></lightning-input-field>    
+                </div>
+
+                <!-- SLA Violation -->
+                <div class="slds-col slds-size_1-of-3">
+                    <lightning-input-field field-name="SLAViolation__c"></lightning-input-field>    
+                </div>
+
+                <!-- Description -->
+                <div class="slds-col slds-size_3-of-3">
+                    <lightning-input-field field-name="Description"></lightning-input-field>    
+                </div>
+
+                <!-- Buttons -->
+                <div class="slds-col slds-size_3-of-3 slds-m-top_small">
+                    <lightning-button type="submit" class="slds-m-left_x-small" label="Create" variant="brand"></lightning-button>
+                    <lightning-button type="reset" label="Reset" variant="neutral" class="slds-m-left_x-small"></lightning-button>
+                </div>
+
+            </div>
+        </lightning-record-edit-form>
+    </lightning-card>
+</template>
