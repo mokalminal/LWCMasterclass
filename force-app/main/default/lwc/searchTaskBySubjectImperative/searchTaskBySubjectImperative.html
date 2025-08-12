@@ -1,0 +1,45 @@
+<template>
+    <lightning-card title="Search Task by Subject (Imperatively)">
+        <div class="slds-m-top_medium slds-m-bottom_x-large">
+            <p class="slds-m-bottom_medium">
+                A text input field that is required.
+            </p>
+
+            <!-- Default/basic -->
+            <div class="slds-p-around_medium lgc-bg">
+                <lightning-input value={subject} onchange={handleSubjectChange} type="text" label="Enter Your Subject"
+                    placeholder="type here..." required></lightning-input>
+            </div>
+            <div class="slds-p-around_medium lgc-bg">
+                <lightning-button variant="brand" label="Search" title="Search" onclick={searchTasks}
+                    class="slds-m-left_x-small"></lightning-button>
+            </div>
+        </div>
+        <template if:true={showTable}>
+            <div class="slds-p-around_medium lgc-bg">
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Subject</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Activity Date</th>
+                            <th scope="col">Priority</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={taskList} for:item="task">
+                            <tr key={task.Id}>
+                                <td>{task.Id}</td>
+                                <td>{task.Subject}</td>
+                                <td>{task.Status}</td>
+                                <td>{task.ActivityDate}</td>
+                                <td>{task.Priority}</td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+        </template>
+    </lightning-card>
+</template>

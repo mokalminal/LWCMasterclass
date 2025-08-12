@@ -1,0 +1,48 @@
+<template>
+    <lightning-card title="Custom Case Creator Form">
+        <div class="slds-p-around_medium lgc-bc">
+
+            <!-- Subject -->
+            <lightning-input 
+                type="text" 
+                value={subject} 
+                onchange={populateSubject}
+                label="Enter Subject" 
+                placeholder="Type your subject here..." 
+                required>
+            </lightning-input>
+
+            <!-- Priority -->
+            <lightning-combobox
+                name="Priority"
+                label="Priority"
+                placeholder="Select Priority"
+                value={priority}
+                onchange={populatePriority}
+                options={options}>
+            </lightning-combobox>
+
+            <!-- Description -->
+            <lightning-textarea 
+                name="description" 
+                onchange={populateDescription} 
+                value={description} 
+                label="Enter your issue">
+            </lightning-textarea>
+
+            <!-- Button -->
+            <div class="slds-m-top_medium">
+                <lightning-button 
+                    variant="brand" 
+                    label="Create Case" 
+                    title="Create Case" 
+                    icon-name="utility:choice" 
+                    class="slds-m-left_x-small"
+                    onclick={createCase}>
+                </lightning-button>
+            </div>
+
+        </div>
+        
+    </lightning-card>
+</template>
